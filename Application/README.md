@@ -1,1 +1,0 @@
-# udacity-devops-nanodegree
