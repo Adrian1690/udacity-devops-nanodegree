@@ -9,7 +9,7 @@ pipeline {
         stage('Build Docker Image'){
             steps{
                 sh 'sudo docker build --tag=adrian1690/hello-node:v1 .'
-                sh 'sudo docker image ls'
+                sh 'sudo docker image ls '
             }
         }
         stage('Upload Docker image to Docker Hub'){
