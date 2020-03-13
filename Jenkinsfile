@@ -8,15 +8,15 @@ pipeline {
         }
         stage('Build Docker Image'){
             steps{
-                sh 'docker build --tag=adrian1690/hello-node:v1 .'
-                sh 'docker image ls'
+                sh 'sudo docker build --tag=adrian1690/hello-node:v1 .'
+                sh 'sudo docker image ls'
             }
         }
         stage('Upload Docker image to Docker Hub'){
             steps{
                 withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerpwd')]) {
-                    sh "docker login -u adrian1690 -p ${dockerpwd}"
-                    sh 'docker push adrian1690/hello-node:v1'
+                    sh "sudo docker login -u adrian1690 -p ${dockerpwd}"
+                    sh 'sudo docker push adrian1690/hello-node:v1'
                 }
             }
         }
