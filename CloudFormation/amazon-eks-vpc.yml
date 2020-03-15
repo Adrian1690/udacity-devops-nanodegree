@@ -1,6 +1,8 @@
 ---
 AWSTemplateFormatVersion: '2010-09-09'
-Description: 'Amazon EKS Sample VPC'
+Description: >
+    Adrian Peña / Udacity
+    Create infrastructure for cluster
 
 Parameters:
 

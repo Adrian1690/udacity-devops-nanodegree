@@ -1,0 +1,19 @@
+Description: >
+    Adrian Peña / Udacity
+    Create infrastructure for cluster
+
+Resources:
+    myCluster:
+      Type: 'AWS::EKS::Cluster'
+      Properties:
+        Name: prod
+        Version: '1.14'
+        RoleArn: >-
+            arn:aws:iam::518576844828:role/eksrole
+        ResourcesVpcConfig:
+          SecurityGroupIds:
+            - sg-0f2a612b816607b19
+          SubnetIds:
+            - subnet-02f2023eb611c75ae
+            - subnet-0c3888b22bb075f24
+            - subnet-0c33fe8ca4695d528

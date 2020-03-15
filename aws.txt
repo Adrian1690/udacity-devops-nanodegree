@@ -1,0 +1,43 @@
+eks role arn
+
+arn:aws:iam::518576844828:role/eksrole
+
+
+eks vpc 
+
+SecurityGroups	sg-0f2a612b816607b19	
+SubnetIds	subnet-02f2023eb611c75ae,subnet-0c3888b22bb075f24,subnet-0c33fe8ca4695d528
+VpcId	vpc-09fe7a470a707fadb
+
+
+
+aws eks --region us-west-2 update-kubeconfig --name prod
+
+
+eks worker nodes output
+
+NodeInstanceRole	arn:aws:iam::518576844828:role/eks-nodes-NodeInstanceRole-8HDY7NNEG71J	
+NodeSecurityGroup	sg-06b76efac5cf4152a
+
+
+
+
+        stage('Lint HTML') {
+            steps {
+                sh 'tidy -q -e *.html'
+            }
+        }
+        stage('Build Docker Image'){
+            steps{
+                sh 'sudo docker build --tag=adrian1690/hello-node:v1 .'
+                sh 'sudo docker image ls '
+            }
+        }
+        stage('Upload Docker image to Docker Hub'){
+            steps{
+                withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerpwd')]) {
+                    sh "sudo docker login -u adrian1690 -p ${dockerpwd}"
+                    sh 'sudo docker push adrian1690/hello-node:v1'
+                }
+            }
+        }

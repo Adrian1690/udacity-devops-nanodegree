@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-node-adrian
+spec:
+  selector:
+    matchLabels:
+      run: hello-node-adrian
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: hello-node-adrian
+    spec:
+      containers:
+      - name: hello-node-adrian
+        image: adrian1690/hello-node:v2
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 500m
+          requests:
+            cpu: 200m
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-node-adrian
+  labels:
+    run: hello-node-adrian
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    run: hello-node-adrian
+  type: LoadBalancer
+
