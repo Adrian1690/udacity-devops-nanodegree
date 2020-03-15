@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Build Docker Image'){
             steps{
-                sh 'sudo docker build --tag=adrian1690/hello-node:v1 .'
+                sh 'sudo docker build --tag=adrian1690/hello-node:v2 .'
                 sh 'sudo docker image ls '
             }
         }
@@ -16,7 +16,7 @@ pipeline {
             steps{
                 withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerpwd')]) {
                     sh "sudo docker login -u adrian1690 -p ${dockerpwd}"
-                    sh 'sudo docker push adrian1690/hello-node:v1'
+                    sh 'sudo docker push adrian1690/hello-node:v2'
                 }
             }
         }

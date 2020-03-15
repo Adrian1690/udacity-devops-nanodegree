@@ -1,6 +1,6 @@
 # Udacity DevOps Nanodegree
 
-This project is created to finish DevOps Nanodegree from [Udacity}(https://wwww.udacity.com).
+This project is created to finish DevOps Nanodegree from [Udacity](https://wwww.udacity.com).
 
 Node app containerized, pushed to dockerhub and deployed to aws kubernetes cluster.
 
