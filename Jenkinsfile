@@ -4,7 +4,7 @@ pipeline {
         
         stage('Create a deployment and service to expose image created') {
             steps{
-                sh 'sudo docker image ls'
+                sh 'sudo /home/ubuntu/kubectl version'
             }
         }
     }
