@@ -4,7 +4,7 @@ pipeline {
         
         stage('Create a deployment and service to expose image created') {
             steps{
-                sh 'kubectl version'
+                sh 'docker image ls'
             }
         }
     }
