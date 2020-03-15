@@ -4,7 +4,7 @@ This project is created to finish DevOps Nanodegree from [Udacity](https://wwww.
 
 In this project `hello-node` node app will be containerized, uploaded to DockerHub and deploy a AWS Kubernetes cluster.
 
-App URL : [ab263e96d668f11eaa9ad066dcdc1df8-837641097.us-west-2.elb.amazonaws.com](ab263e96d668f11eaa9ad066dcdc1df8-837641097.us-west-2.elb.amazonaws.com)
+App URL : [ab263e96d668f11eaa9ad066dcdc1df8-837641097.us-west-2.elb.amazonaws.com](http://ab263e96d668f11eaa9ad066dcdc1df8-837641097.us-west-2.elb.amazonaws.com)
 
 Docker Image: [adrian1690/hello-node:v2](https://hub.docker.com/r/adrian1690/hello-node/tags)
 
