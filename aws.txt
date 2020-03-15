@@ -5,9 +5,9 @@ arn:aws:iam::518576844828:role/eksrole
 
 eks vpc 
 
-SecurityGroups	sg-0f2a612b816607b19	
-SubnetIds	subnet-02f2023eb611c75ae,subnet-0c3888b22bb075f24,subnet-0c33fe8ca4695d528
-VpcId	vpc-09fe7a470a707fadb
+SecurityGroups	sg-03ac92ba2c00544fb	
+SubnetIds	subnet-01c8de1d7645152f3,subnet-0a813311ee7f06785,subnet-00e910698fd59a460
+VpcId	vpc-0b6bec3a8c77b50fb
 
 
 
@@ -16,6 +16,6 @@ aws eks --region us-west-2 update-kubeconfig --name prod
 
 eks worker nodes output
 
-NodeInstanceRole	arn:aws:iam::518576844828:role/eks-nodes-NodeInstanceRole-8HDY7NNEG71J	
-NodeSecurityGroup	sg-06b76efac5cf4152a
+NodeInstanceRole	arn:aws:iam::518576844828:role/eks-nodegroup-NodeInstanceRole-1P3JPH3CA5YVP	
+NodeSecurityGroup	sg-09ce98bc4ab341014
 

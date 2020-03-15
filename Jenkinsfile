@@ -6,7 +6,7 @@ pipeline {
                 sh 'tidy -q -e *.html'
             }
         }
-        stage('Build Docker Image'){
+        stage('Create Docker Container'){
             steps{
                 sh 'sudo docker build --tag=adrian1690/hello-node:v2 .'
                 sh 'sudo docker image ls '

@@ -2,7 +2,13 @@
 
 This project is created to finish DevOps Nanodegree from [Udacity](https://wwww.udacity.com).
 
-Node app containerized, pushed to dockerhub and deployed to aws kubernetes cluster.
+In this project `hello-node` node app will be containerized, uploaded to DockerHub and deploy a AWS Kubernetes cluster.
+
+App URL : [ab263e96d668f11eaa9ad066dcdc1df8-837641097.us-west-2.elb.amazonaws.com](ab263e96d668f11eaa9ad066dcdc1df8-837641097.us-west-2.elb.amazonaws.com)
+
+Docker Image: [adrian1690/hello-node:v2](https://hub.docker.com/r/adrian1690/hello-node/tags)
+
+Worker Nodes in us-west-2 region use optimized image ec2 `ami-0907724389e8705d9`
 
 ## Requirements
 
@@ -20,7 +26,7 @@ Also get an account in Docker Hub to upload docker images.
 
 To run hello-node use `node server.js` command.
 
-# Files and folders explanation
+## Files and folders explanation
 
 - CloudFormation: Contains files to create cluster infraestructure in AWS Cloudformation.
     - amazon-eks-vpc: First create the network insfrastructure.
@@ -33,6 +39,10 @@ To run hello-node use `node server.js` command.
 - Jenkinsfile: Steps to lint, build docker image and push to docker hub.
 - run_kubernetes.sh: script to deploy image builded in Jenkins pipeline.
 
+
+## Deployment Type
+
+In this project use rolling deployment. When a new version of app is deployed, the replica set create new pods in background with new app version, these new pods replace the old pods one by one until all pods are updated.
 
 Follow these resources to create a cluster in aws:
 
